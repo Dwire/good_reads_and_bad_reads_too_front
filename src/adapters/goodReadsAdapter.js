@@ -4,13 +4,12 @@
 const SEARCH_BASE_URL = 'http://localhost:3000/api/v1/book_search'
 
 const goodReadsAdapter = {
-  search: (term) => fetch(SEARCH_BASE_URL, {
+  search: (term, token) => fetch(SEARCH_BASE_URL, {
     method: 'POST',
-    headers: {'Content-Type': 'application/json'},
+    headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'Authorization': token},
     body: JSON.stringify({search_term: term})
   })
     .then(res => res.json())
-    .then(console.log)
   // show: (id) => fetch().then(res => res.json())
 }
 

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
-// refactor these search components 
-import GoodReadsSearchResults from './GoodReadsSearchResults'
+// refactor these search components
+import GoodReadsSearchResults from '../components/GoodReadsSearchResults'
 
 class GoodReadsSearch extends Component {
   state = {
