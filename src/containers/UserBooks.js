@@ -14,8 +14,9 @@ class UserBooks extends Component {
   render() {
     return (
       <div>
-        <button onClick={this.handleClick} >{this.state.ownedBook ? "Owned Books" : "Future Books"}</button>
-        <RenderUserBooks books={this.state.ownedBook ? this.props.readBooks : this.props.readingList} owned={this.state.ownedBook} />
+        <h1>{this.state.ownedBook ? "My Library" : "Reading List"}  <button onClick={this.handleClick} >{this.state.ownedBook ? "Future Books" : "Owned Books"}</button></h1>
+
+        <RenderUserBooks books={this.state.ownedBook ? this.props.readBooks : this.props.readingList} />
       </div>
     );
   }

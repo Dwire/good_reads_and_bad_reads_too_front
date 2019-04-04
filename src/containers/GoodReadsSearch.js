@@ -18,7 +18,7 @@ class GoodReadsSearch extends Component {
     return (
       <div>
         <form >
-          <input type="text" onChange={this.handleChange}/>
+          <input type="text" placeholder='Search For A Book' onChange={this.handleChange}/>
         </form>
         <GoodReadsSearchResults term={this.state.searchTerm}/>
       </div>

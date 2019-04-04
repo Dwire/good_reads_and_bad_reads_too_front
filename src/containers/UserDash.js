@@ -35,6 +35,7 @@ class UserDash extends Component {
         <GoodReadsSearch />
         <UserBooks />
         <BookClubs />
+        {/* some statistic how many books you have completed this month etc */}
       </div>
     );
   }
