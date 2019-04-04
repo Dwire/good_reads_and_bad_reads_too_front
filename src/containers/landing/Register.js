@@ -4,9 +4,9 @@ import { connect } from 'react-redux'
 import LoginForm from './LoginForm'
 // import Register from './Register'
 
-import { setLogin } from '../actions/sessionsActions'
-import { setUser } from '../actions/userActions'
-import userAdapter from '../adapters/userAdapter'
+import { setLogin } from '../../actions/sessionsActions'
+import { setUser } from '../../actions/userActions'
+import userAdapter from '../../adapters/userAdapter'
 
 class Login extends Component {
 

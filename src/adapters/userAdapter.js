@@ -1,7 +1,7 @@
 const BASE_URL = 'http://localhost:3000/api/v1/users'
 
 const userAdapter = {
-  index: () => fetch(BASE_URL).then(res => res.json()),
+  // index: () => fetch(BASE_URL).then(res => res.json()),
   create: (user) => fetch(BASE_URL, {
     method: 'POST',
     headers: {

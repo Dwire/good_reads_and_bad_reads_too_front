@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import RenderBook from './RenderBook'
+import RenderGoodReadsBook from './RenderGoodReadsBook'
 import goodReadsAdapter from '../adapters/goodReadsAdapter'
 
 class GoodReadsSearchResults extends Component {
@@ -10,7 +10,7 @@ class GoodReadsSearchResults extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    console.log('prev', prevProps);
+    // console.log('prev', prevProps);
     if (prevProps.term !== this.props.term && this.props.term.length > 3){
       let token = window.localStorage.getItem('jwt')
       goodReadsAdapter.search(this.props.term, token)
@@ -33,9 +33,9 @@ class GoodReadsSearchResults extends Component {
   listBooksFromApi = () => {
     const books = this.state.books
     if (Array.isArray(books)) {
-      return books.map(book => <RenderBook book={book} addToReadingList={this.addToReadingList} addToReadList={this.addToReadList}/>)
+      return books.map(book => <RenderGoodReadsBook book={book.best_book} addToReadingList={this.addToReadingList} addToReadList={this.addToReadList}/>)
     }else if (books !== undefined) {
-      return <RenderBook book={books} addToReadingList={this.addToReadingList} addToReadList={this.addToReadList} />
+      return <RenderGoodReadsBook book={books.best_book} addToReadingList={this.addToReadingList} addToReadList={this.addToReadList} />
     }
   }
 
@@ -48,7 +48,6 @@ class GoodReadsSearchResults extends Component {
   }
 
   render() {
-    console.log('books', this.state.books);
     return (
       <div id='book-search-list'>
         {this.listBooksFromApi()}

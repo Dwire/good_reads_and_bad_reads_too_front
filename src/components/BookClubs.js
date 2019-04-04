@@ -1,11 +1,27 @@
 import React from 'react'
+import { connect } from 'react-redux';
 
-const BookClubs = () => {
+import BookClubCard from './BookClubCard';
+
+const BookClubs = ({ bookClubs }) => {
+  // debugger
+  const renderBookClubCards = bookClubs.map(bookClub => <BookClubCard key={bookClub.id} bookClub={bookClub}/>)
   return (
     <div>
-      Book Clubs
+      <h1>Your Book CLubs</h1>
+      {renderBookClubCards}
     </div>
   )
 }
 
-export default BookClubs
+const mapStateToProps = state => {
+  return {
+    bookClubs: state.user.book_clubs,
+   }
+}
+
+BookClubs.defaultProps = {
+  bookClubs: []
+}
+
+export default connect(mapStateToProps, null)(BookClubs)

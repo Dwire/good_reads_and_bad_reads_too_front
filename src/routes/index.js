@@ -1,10 +1,10 @@
   import React from 'react'
 import { withRouter, Route, Switch } from 'react-router-dom';
 
-import Login from '../containers/Login'
+import Login from '../containers/landing/Login'
 // import Register from '../containers/Register'
-import Sessions from '../containers/Sessions'
-import SplashPage from '../containers/SplashPage'
+import Sessions from '../containers/landing/Sessions'
+import SplashPage from '../containers/landing/SplashPage'
 import UserDash from '../containers/UserDash'
 import BookClubDash from '../containers/BookClubDash'
 
