@@ -9,7 +9,8 @@ const userAdapter = {
       'Accept': 'application/json'
     },
     body: JSON.stringify(user)
-  }).then(res => res.json())
+  }).then(res => res.json()),
+
   // show: (id) => fetch().then(res => res.json())
 }
 
