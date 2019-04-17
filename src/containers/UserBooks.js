@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 // import RenderUserBooks from '../components/RenderUserBooks'
 import RenderUserBookSvg from '../components/RenderUserBookSvg'
 
+
 class UserBooks extends Component {
   state = {
     ownedBook: true
@@ -14,7 +15,7 @@ class UserBooks extends Component {
 
   renderBookSvgs = () => {
     const bookList = this.state.ownedBook ? this.props.readBooks :  this.props.readingList
-     return bookList.map(book => <RenderUserBookSvg key={book.id} book={book}/>)
+    return bookList.map(book => <RenderUserBookSvg key={book.id} book={book} />)
   }
 
   render() {
