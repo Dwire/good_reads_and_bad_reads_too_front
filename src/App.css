@@ -32,11 +32,20 @@
   }
 }
 
-.svgDiv {
-  max-width: auto;
-  max-height: 100px;
+.bookDiv {
+  max-width: 600px;
 }
 
-svg {
-  border: 2px solid black;
+.bookShelfContainer {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 600px;
 }
+
+.svgDiv {
+ max-width: 300px;
+}
+
+/* svg {
+  border: 2px solid black;
+} */

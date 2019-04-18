@@ -4,6 +4,7 @@ import BookSVG from './BookSVG'
 // import bookSvg from '../book_side.svg'
 
 const RenderUserBookSvg = ({book}) => {
+  console.log(book);
   return (
     <div className="svgDiv">
       <BookSVG book={book}/>

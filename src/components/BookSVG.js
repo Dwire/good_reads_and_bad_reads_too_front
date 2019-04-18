@@ -3,13 +3,15 @@ import randomColor from 'randomcolor'
 
 const BookSVG = ({book}) => {
   const backgroundColor = randomColor({
-    lumosity: 'light',
+    lumosity: 'dark',
     hue: 'random'
   })
+
   const topColor = randomColor({
-    lumosity: 'dark',
+    lumosity: 'light',
     hue: backgroundColor
   })
+
   return (
     <svg width="100%" height="100%" viewBox="970 790 3000 450" version="1.1" xmlns="http://www.w3.org/2000/svg" >
       <g>

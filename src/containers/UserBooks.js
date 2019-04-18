@@ -19,10 +19,13 @@ class UserBooks extends Component {
   }
 
   render() {
+   console.log(this.props);
     return (
-      <div>
+      <div className='bookDiv'>
         <h1>{this.state.ownedBook ? "My Library" : "Reading List"}  <button onClick={this.handleClick} >{this.state.ownedBook ? "Future Books" : "Owned Books"}</button></h1>
-        {this.renderBookSvgs()}
+        <div className='bookShelfContainer'>
+          {this.renderBookSvgs()}
+        </div>
       </div>
     );
   }
