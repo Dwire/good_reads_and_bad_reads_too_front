@@ -19,6 +19,7 @@ class UserDash extends Component {
 // NOTE: do not want to set all users
   componentDidMount(){
     let token = window.localStorage.getItem('jwt')
+
     sessionsAdapter.reauth(token)
     .then(this.setUser)
   }
