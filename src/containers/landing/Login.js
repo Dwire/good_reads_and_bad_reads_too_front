@@ -41,7 +41,7 @@ class Login extends Component {
     // console.log(this.props.history);
     return (
       <div>
-        { this.props.loggedIn ? <Redirect to='users'>User Page</Redirect>: <LoginForm handleChange={this.handleChange} handleSubmit={this.handleSubmit} email={this.state.user.email} password={this.state.user.password}/> }
+        { this.props.login ? <Redirect to='users'>User Page</Redirect> : <LoginForm handleChange={this.handleChange} handleSubmit={this.handleSubmit} email={this.state.user.email} password={this.state.user.password} origin={"login"}/> }
       </div>
     )
   }

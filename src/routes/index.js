@@ -2,7 +2,7 @@
 import { withRouter, Route, Switch } from 'react-router-dom';
 
 import Login from '../containers/landing/Login'
-// import Register from '../containers/Register'
+import Register from '../containers/landing/Register'
 import Sessions from '../containers/landing/Sessions'
 import SplashPage from '../containers/landing/SplashPage'
 import UserDash from '../containers/UserDash'
@@ -18,6 +18,7 @@ class Routes extends React.Component {
         <Route exact path="/" component={SplashPage} />
         <Route exact path="/sessions" component={Sessions} />
         <Route exact path="/login" component={Login} />
+        <Route exact path="/register" component={Register} />
         <Route path="/users" component={UserDash} />
         <Route path="/book_clubs" component={BookClubDash} />
       </Switch>
