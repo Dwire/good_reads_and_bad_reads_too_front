@@ -1,0 +1,18 @@
+.bookDiv {
+  max-width: 600px;
+}
+
+.bookShelfContainer {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 600px;
+}
+
+.svgDiv {
+ width: 300px;
+}
+
+svg:hover {
+  transform: scale(1.8);
+  transition: 0.5s;
+}

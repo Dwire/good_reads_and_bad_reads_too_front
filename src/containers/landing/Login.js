@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 
@@ -40,9 +40,9 @@ class Login extends Component {
   render() {
     // console.log(this.props.history);
     return (
-      <div>
+      <Fragment>
         { this.props.login ? <Redirect to='users'>User Page</Redirect> : <LoginForm handleChange={this.handleChange} handleSubmit={this.handleSubmit} email={this.state.user.email} password={this.state.user.password} origin={"login"}/> }
-      </div>
+      </Fragment>
     )
   }
 }

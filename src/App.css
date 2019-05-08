@@ -32,19 +32,7 @@
   }
 }
 
-.bookDiv {
-  max-width: 600px;
-}
 
-.bookShelfContainer {
-  display: flex;
-  flex-wrap: wrap;
-  max-width: 600px;
-}
-
-.svgDiv {
- max-width: 300px;
-}
 
 /* svg {
   border: 2px solid black;

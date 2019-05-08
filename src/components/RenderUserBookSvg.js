@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import BookSVG from './BookSVG'
 // import randomColor from 'randomcolor'
 // import bookSvg from '../book_side.svg'
@@ -6,9 +6,9 @@ import BookSVG from './BookSVG'
 const RenderUserBookSvg = ({book}) => {
   console.log(book);
   return (
-    <div className="svgDiv">
+    <Fragment>
       <BookSVG book={book}/>
-    </div>
+    </Fragment>
   )
 }
 

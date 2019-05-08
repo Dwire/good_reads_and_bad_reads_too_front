@@ -13,7 +13,7 @@ const BookSVG = ({book}) => {
   })
 
   return (
-    <svg width="100%" height="100%" viewBox="970 790 3000 450" version="1.1" xmlns="http://www.w3.org/2000/svg" >
+    <svg className="svgDiv" width="100%" height="100%" viewBox="970 790 3000 450" version="1.1" xmlns="http://www.w3.org/2000/svg" >
       <g>
         <path d="M1503.26,789.27l-0.406,448.705l1928.6,1.747l0.406,-448.705l-1928.6,-1.747Z"/>
         <path d="M1503.25,795.305l-0.395,436l1928.6,1.747l0.395,-436l-1928.6,-1.747Z" fill={backgroundColor} />

@@ -32,7 +32,7 @@ const LoginForm = (props) => {
     return (
       <Fragment>
         {props.origin === 'login' ? login() : signUp()}
-      </Fragment>  
+      </Fragment>
     )
   }
 
