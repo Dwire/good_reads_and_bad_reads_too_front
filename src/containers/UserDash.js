@@ -31,10 +31,10 @@ class UserDash extends Component {
 
   render() {
     return (
-      <div>
-        <GoodReadsSearch />
-        <UserBooks />
+      <div className='user-dash'>
         <BookClubs />
+        <UserBooks />
+        <GoodReadsSearch />
         {/* some statistic how many books you have completed this month etc */}
       </div>
     );
