@@ -1,6 +1,9 @@
 // User Reducer
 export const SET_USER = 'SET_USER'
-// Workout Reducer
+
+// BookClub Reducer
+export const SET_BOOK_CLUB = 'SET_BOOK_CLUB'
+export const SET_BOOK_CLUBS ='SET_BOOK_CLUBS'
 
 // Session Reducer
 export const SET_INITIAL_STATE = 'SET_INITIAL_STATE'

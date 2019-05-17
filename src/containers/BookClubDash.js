@@ -1,13 +1,15 @@
 import React, { Component } from 'react'
+import GoodReadsSearch from './GoodReadsSearch'
 
 
 class BookClubDash extends Component {
   render() {
     return (
       <div>
+        <p>GR Search</p>
+        <GoodReadsSearch />
         <ul>
           <li>Book Club Dash</li>
-          <li>GR Search</li>
           <li>Members List</li>
           <ul>
             <li>top reviewed books</li>
