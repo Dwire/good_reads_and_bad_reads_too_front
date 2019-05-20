@@ -6,7 +6,7 @@ import LoginForm from './LoginForm'
 // import UserDash from './UserDash'
 // import Register from './Register'
 
-import { setLogin } from '../../actions/sessionsActions'
+import { setLogin, setInitialState } from '../../actions/sessionsActions'
 import { setUser } from '../../actions/userActions'
 import sessionsAdapter from '../../adapters/sessionsAdapter'
 
@@ -23,8 +23,11 @@ class Login extends Component {
   componentDidMount(){
     // debugger
     let token = window.localStorage.getItem('jwt')
-    sessionsAdapter.reauth(token)
-    .then(this.props.setUser)
+
+    if (token) {
+      sessionsAdapter.reauth(token)
+      .then(this.props.setUser)
+    }
   }
 
   handleChange = (e) => {
@@ -41,13 +44,14 @@ class Login extends Component {
   setLocalStorage = (res) => {
     window.localStorage.setItem('jwt', res.jwt)
     // this.props.setLogin()
-    this.props.setUser(res.user)
+    // this.props.setUser(res.user)
+    this.props.setInitialState(res.user)
   }
 
   render() {
     return (
       <Fragment>
-        { this.props.loggedIn ? <Redirect to='users'>User Page</Redirect> : <LoginForm handleChange={this.handleChange} handleSubmit={this.handleSubmit} email={this.state.user.email} password={this.state.user.password} origin={"login"}/> }
+        { this.props.loggedIn ? <Redirect to='users'/> : <LoginForm handleChange={this.handleChange} handleSubmit={this.handleSubmit} email={this.state.user.email} password={this.state.user.password} origin={"login"}/> }
       </Fragment>
     )
   }
@@ -57,4 +61,4 @@ const mapStateToProps = state => {
   return { loggedIn: state.session.loggedIn }
 }
 
-export default connect(mapStateToProps, { setLogin, setUser })(Login)
+export default connect(mapStateToProps, { setLogin, setUser, setInitialState })(Login)
