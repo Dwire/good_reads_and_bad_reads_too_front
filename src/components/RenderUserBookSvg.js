@@ -4,7 +4,6 @@ import BookSVG from './BookSVG'
 // import bookSvg from '../book_side.svg'
 
 const RenderUserBookSvg = ({book}) => {
-  console.log(book);
   return (
     <Fragment>
       <BookSVG book={book}/>

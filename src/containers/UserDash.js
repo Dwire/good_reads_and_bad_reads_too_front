@@ -10,6 +10,7 @@ import UserBooks from './UserBooks'
 
 import sessionsAdapter from '../adapters/sessionsAdapter'
 
+import { setBookClubs } from '../actions/bookClubActions'
 import { setUser } from '../actions/userActions'
 import { setLogin } from '../actions/sessionsActions'
 // import userAdapter from '../adapters/userAdapter'
@@ -30,8 +31,8 @@ class UserDash extends Component {
   setUser = (res) => {
     // this.props.setLogin()
     const {book_clubs, ...user} = res.user
-    debugger
     this.props.setUser(user)
+    this.props.setBookClubs(book_clubs)
   }
 
   render() {
@@ -46,14 +47,14 @@ class UserDash extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    user: state.user,
-    bookClubs: state.user.book_clubs,
-    readBooks: state.user.read_books,
-    readingList: state.user.reading_list
-   }
-}
+// const mapStateToProps = state => {
+//   return {
+//     user: state.user,
+//     bookClubs: state.bookClub.all,
+//     readBooks: state.user.read_books,
+//     readingList: state.user.reading_list
+//    }
+// }
 
 
-export default connect(mapStateToProps, {  setUser, setLogin })(UserDash)
+export default connect(null, {  setUser, setBookClubs, setLogin })(UserDash)

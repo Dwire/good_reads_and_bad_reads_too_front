@@ -7,11 +7,11 @@ export const userReducer = (state = userState, action) => {
     case SET_INITIAL_STATE:
       const {book_clubs} = action.payload
       const book_club = book_clubs[0]
-      return {...state, bookClub: book_club, bookClubs: book_clubs}
+      return {...state, current: book_club, all: book_clubs}
     case SET_BOOK_CLUB:
       return action.payload
     case SET_BOOK_CLUBS:
-      return action.payload
+      return {...state,  current: action.payload[0], all: action.payload}
     default:
       return state
   }

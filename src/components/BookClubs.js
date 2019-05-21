@@ -16,7 +16,7 @@ const BookClubs = ({ bookClubs }) => {
 
 const mapStateToProps = state => {
   return {
-    bookClubs: state.user.book_clubs,
+    bookClubs: state.bookClub.all,
    }
 }
 
