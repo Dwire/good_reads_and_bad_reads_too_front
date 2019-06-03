@@ -36,9 +36,10 @@ class UserDash extends Component {
   }
 
   render() {
+    console.log("user", this.props);
     return (
       <div className='user-dash'>
-        <BookClubs />
+        <BookClubs history={this.props.history} />
         <UserBooks />
         <GoodReadsSearch />
         {/* some statistic how many books you have completed this month etc */}

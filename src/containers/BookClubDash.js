@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import GoodReadsSearch from './GoodReadsSearch'
 
 
@@ -6,6 +7,7 @@ class BookClubDash extends Component {
   render() {
     return (
       <div>
+        <h1>{this.props.currentClub.name}</h1>
         <p>GR Search</p>
         <GoodReadsSearch />
         <ul>
@@ -23,4 +25,10 @@ class BookClubDash extends Component {
   }
 }
 
-export default BookClubDash;
+const mapStateToProps = state => {
+  return {
+    currentClub: state.bookClub.currentClub
+  }
+}
+
+export default connect(mapStateToProps, null)(BookClubDash);

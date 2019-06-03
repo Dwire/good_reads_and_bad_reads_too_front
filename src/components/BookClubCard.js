@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
 import MemberCard from './MemberCard';
-import { Link } from 'react-router-dom'
+import { setBookClub } from '../actions/bookClubActions'
 
 class BookClubCard extends Component {
   state = {
@@ -11,6 +12,13 @@ class BookClubCard extends Component {
     this.setState({members: !this.state.members})
   }
 
+  handleClickToBookClub = () => {
+    console.log("MOMENTS", this.props);
+    this.props.setBookClub(this.props.bookClub)
+    this.props.history.push('/book_clubs')
+
+  }
+
   showMembers = () => {
     return this.props.bookClub.members.map(member => <MemberCard key={member.id} member={member} />)
   }
@@ -18,7 +26,7 @@ class BookClubCard extends Component {
   render() {
     return (
       <div>
-        <h3><Link to='/book_clubs'>{this.props.bookClub.name}</Link></h3>
+        <h3 onClick={this.handleClickToBookClub}>{this.props.bookClub.name}</h3>
         <button onClick={this.handleClick}>{this.state.members ? 'Hide Members' : 'Show Members'}</button>
         {this.state.members ? this.showMembers() : null}
       </div>
@@ -26,4 +34,4 @@ class BookClubCard extends Component {
   }
 }
 
-export default BookClubCard
+export default connect(null, { setBookClub })(BookClubCard)

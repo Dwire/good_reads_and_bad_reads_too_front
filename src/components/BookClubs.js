@@ -3,9 +3,9 @@ import { connect } from 'react-redux';
 
 import BookClubCard from './BookClubCard';
 
-const BookClubs = ({ bookClubs }) => {
+const BookClubs = ({ bookClubs, history }) => {
   // debugger
-  const renderBookClubCards = bookClubs.map(bookClub => <BookClubCard key={bookClub.id} bookClub={bookClub}/>)
+  const renderBookClubCards = bookClubs.map(bookClub => <BookClubCard key={bookClub.id} bookClub={bookClub} history={history}/>)
   return (
     <div>
       <h1>Your Book CLubs</h1>
@@ -15,9 +15,8 @@ const BookClubs = ({ bookClubs }) => {
 }
 
 const mapStateToProps = state => {
-  debugger
   return {
-    bookClubs: state.book_club.allClubs
+    bookClubs: state.bookClub.allClubs
    }
 }
 
