@@ -37,6 +37,7 @@ class Login extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
+    console.log("USER", this.state);
     sessionsAdapter.login(this.state)
     .then(this.setLocalStorage)
   }

@@ -1,6 +1,7 @@
 import React from 'react'
 
 const RenderGoodReadsBook = ({book, addToReadingList, addToReadList}) => {
+  console.log(book);
   return (
       <div>
         <h4>{book.title}</h4>
