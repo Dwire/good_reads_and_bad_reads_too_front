@@ -43,6 +43,7 @@ class Login extends Component {
   }
 
   setLocalStorage = (res) => {
+  debugger
     window.localStorage.setItem('jwt', res.jwt)
     // this.props.setLogin()
     // this.props.setUser(res.user)

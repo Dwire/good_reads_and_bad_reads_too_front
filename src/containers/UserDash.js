@@ -30,6 +30,7 @@ class UserDash extends Component {
 // NOTE: User should already be set
   setUser = (res) => {
     // this.props.setLogin()
+    // debugger
     const {book_clubs, ...user} = res.user
     this.props.setUser(user)
     this.props.setBookClubs(book_clubs)
@@ -42,6 +43,7 @@ class UserDash extends Component {
         <BookClubs history={this.props.history} />
         <UserBooks />
         <GoodReadsSearch />
+        {/* <ReadingStatistics /> */}
         {/* some statistic how many books you have completed this month etc */}
       </div>
     );
