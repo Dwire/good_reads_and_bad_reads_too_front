@@ -36,6 +36,7 @@ const BookSVG = ({book}) => {
       </defs>
     </svg>
   )
+
 }
 
 export default BookSVG

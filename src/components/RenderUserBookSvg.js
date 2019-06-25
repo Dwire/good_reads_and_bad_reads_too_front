@@ -1,14 +1,20 @@
 import React, { Fragment } from 'react'
-import BookSVG from './BookSVG'
+// import BookSVG from './BookSVG'
+
 // import randomColor from 'randomcolor'
 // import bookSvg from '../book_side.svg'
 
 const RenderUserBookSvg = ({book}) => {
   console.log(book);
   return (
-    <Fragment>
-      <BookSVG book={book}/>
-    </Fragment>
+    <div class='book'>
+      <div class="stripe"></div>
+          <p>test</p>
+      <div id="bottom-stripes">
+        <div class="stripe"></div>
+        <div class="stripe"></div>
+      </div>
+    </div>
   )
 }
 
