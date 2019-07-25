@@ -1,6 +1,6 @@
 #bookDiv {
   display: grid;
-/*   border: 1px solid black; */
+  border: 1px solid black;
   padding: 0px;
   grid-template-columns: 1fr;
   grid-template-rows: 25% 25% 25% 25%;
@@ -16,12 +16,12 @@
   order: 0;
 }
 
-.classic-shelf {
+/* .classic-shelf {
   border: 8px solid #B57654;
   background-color: #3D290E;
   padding: 0px 5px;
   order: 0;
-}
+} */
 
 .modern-shelf {
   border-bottom: 15px solid #1D1E21;
