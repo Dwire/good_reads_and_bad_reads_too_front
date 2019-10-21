@@ -17,7 +17,8 @@ class UserBooks extends Component {
     // const bookList = this.state.ownedBook ? this.props.readBooks :  this.props.readingList
     // if (bookList.length){
       const bookRow =  bookList.map(book => <RenderUserBookSvg key={book.id} book={book} />)
-      return <div className='bookShelfContainer'>
+      return <div 
+      className='modern-shelf'>
               {bookRow}
             </div>
     // }else{
@@ -34,16 +35,16 @@ class UserBooks extends Component {
     
     let rowCount = 0
     let startSlice = 0
-    let endSlice = 16
+    let endSlice = 15
     // debugger
     while (startSlice < bookList.length || rowCount < 4){
       bookRowDivs.push(this.renderBookSvgs(bookList.slice(startSlice, endSlice)))
       rowCount += 1
-      startSlice += 16
-      endSlice += 16
+      startSlice += 15
+      endSlice += 15
     }
       return bookRowDivs
-    }
+  }
 
 
   render() {
@@ -51,7 +52,7 @@ class UserBooks extends Component {
     return (
       <div>
         <h1>{this.state.ownedBook ? "My Library" : "Reading List"}  <button onClick={this.handleClick} >{this.state.ownedBook ? "Future Books" : "Owned Books"}</button></h1>
-        <div id='bookDiv' className='classic-shelf'>
+        <div id='bookDiv'>
           {this.createBookShelfContatiner()}
         </div>
       </div>

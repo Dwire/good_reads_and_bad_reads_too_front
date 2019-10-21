@@ -42,3 +42,14 @@
 /* svg {
   border: 2px solid black;
 } */
+
+
+
+
+
+#book-search-list {
+  background: #61dafb; 
+  max-height: 500px;
+  overflow-y: auto;
+
+}

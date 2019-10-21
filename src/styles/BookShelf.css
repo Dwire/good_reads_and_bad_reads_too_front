@@ -1,13 +1,13 @@
-.bookDiv {
+/* .bookDiv {
   max-width: 600px;
   background-color: tan;
-}
+} */
 
-.bookShelfContainer {
+/* .bookShelfContainer {
   display: flex;
   flex-wrap: wrap;
   max-width: 600px;
-}
+} */
 
 .svgDiv {
  width: 300px;
