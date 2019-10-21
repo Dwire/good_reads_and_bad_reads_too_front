@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 // import logo from './logo.svg';
 import './App.css';
+import './styles/UserDash.css'
 import './styles/BrowserReset.css';
 import './styles/BookShelf.css'
-import './styles/BookShelf2.css'
+import './styles/UserBookSearch.css'
 
 // check this logic. should I do somthing like this in index instead?
 import Routes from './routes'

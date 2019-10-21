@@ -2,23 +2,15 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 // import RenderUserBooks from '../components/RenderUserBooks'
 import RenderUserBookSvg from '../components/RenderUserBookSvg'
+import { setShelfStyle, toggleBookLists } from '../actions/settingsAndFormAction'
 
 
 class UserBooks extends Component {
-  state = {
-    ownedBook: true
-  }
-
-  handleClick = () => {
-    this.setState({ownedBook: !this.state.ownedBook})
-  }
-
   renderBookSvgs = (bookList) => {
     // const bookList = this.state.ownedBook ? this.props.readBooks :  this.props.readingList
     // if (bookList.length){
       const bookRow =  bookList.map(book => <RenderUserBookSvg key={book.id} book={book} />)
-      return <div 
-      className='modern-shelf'>
+      return <div className= {`${this.props.shelfStyle}-shelf`}>
               {bookRow}
             </div>
     // }else{
@@ -29,7 +21,7 @@ class UserBooks extends Component {
   }
 
   createBookShelfContatiner = () => {
-    const bookList = this.state.ownedBook ? this.props.readBooks :  this.props.readingList
+    const bookList = this.props.ownedBooks ? this.props.readBooks :  this.props.readingList
 
     const bookRowDivs = []
     
@@ -51,7 +43,13 @@ class UserBooks extends Component {
    console.log(this.props);
     return (
       <div>
-        <h1>{this.state.ownedBook ? "My Library" : "Reading List"}  <button onClick={this.handleClick} >{this.state.ownedBook ? "Future Books" : "Owned Books"}</button></h1>
+        <h1>{this.props.ownedBooks ? "My Library" : "Reading List"}</h1>
+        <button onClick={this.props.toggleBookLists} >{this.props.ownedBooks ? "Show Wish List" : "Show Read Books"}</button>
+        <select value={this.props.shelfStyleonChange} onChange={this.props.setShelfStyle}>
+          <option value="classic">Classic</option>
+          <option value="modern">Modern</option>
+          <option value="list">List</option>
+        </select>
         <div id='bookDiv'>
           {this.createBookShelfContatiner()}
         </div>
@@ -69,8 +67,10 @@ UserBooks.defaultProps = {
 const mapStateToProps = state => {
   return {
     readBooks: state.user.read_books,
-    readingList: state.user.reading_list
+    readingList: state.user.reading_list,
+    shelfStyle: state.settingsAndFormReducer.shelfStyle,
+    ownedBooks: state.settingsAndFormReducer.ownedBooks
    }
 }
 
-export default connect(mapStateToProps, null)(UserBooks)
+export default connect(mapStateToProps, { setShelfStyle, toggleBookLists })(UserBooks)

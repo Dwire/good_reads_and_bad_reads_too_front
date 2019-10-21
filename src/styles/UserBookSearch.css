@@ -1,0 +1,6 @@
+#book-search-list {
+  background: #61dafb; 
+  max-height: 520px;
+  max-width: 400px;
+  overflow-y: auto;
+}
