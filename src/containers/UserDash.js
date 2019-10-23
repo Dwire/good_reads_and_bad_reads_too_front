@@ -5,6 +5,7 @@ import BookClubs from '../components/BookClubs'
 import GoodReadsSearch from './GoodReadsSearch'
 import UserBooks from './UserBooks'
 import UserBook from './UserBook'
+import UserAnalytics from './UserAnalytics'
 // import BookSearch from '../components/BookSearch'
 // import UserReadingList from '../components/UserReadingList'
 
@@ -40,10 +41,12 @@ class UserDash extends Component {
     console.log("user", this.props);
     return (
       <div className='user-dash'>
-        <BookClubs history={this.props.history} />
+        <div>
+          <GoodReadsSearch />
+          <BookClubs history={this.props.history} />
+        </div>
         {this.props.displayShelf ? <UserBooks /> : <UserBook />}
-        <GoodReadsSearch />
-        {/* some statistic how many books you have completed this month etc */}
+        <UserAnalytics />
       </div>
     );
   }
