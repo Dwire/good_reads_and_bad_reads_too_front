@@ -4,9 +4,10 @@ import { connect } from 'react-redux'
 import BookClubs from '../components/BookClubs'
 import GoodReadsSearch from './GoodReadsSearch'
 import UserBooks from './UserBooks'
+import UserBook from './UserBook'
 // import BookSearch from '../components/BookSearch'
 // import UserReadingList from '../components/UserReadingList'
-// import UserBooks from '../components/UserBooks '
+
 
 import sessionsAdapter from '../adapters/sessionsAdapter'
 
@@ -40,7 +41,7 @@ class UserDash extends Component {
     return (
       <div className='user-dash'>
         <BookClubs history={this.props.history} />
-        <UserBooks />
+        {this.props.displayShelf ? <UserBooks /> : <UserBook />}
         <GoodReadsSearch />
         {/* some statistic how many books you have completed this month etc */}
       </div>
@@ -53,7 +54,8 @@ const mapStateToProps = state => {
     user: state.user,
     bookClubs: state.user.book_clubs,
     readBooks: state.user.read_books,
-    readingList: state.user.reading_list
+    readingList: state.user.reading_list,
+    displayShelf: state.settingsAndFormReducer.displayShelf
    }
 }
 

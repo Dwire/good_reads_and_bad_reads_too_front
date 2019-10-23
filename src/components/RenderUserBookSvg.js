@@ -1,13 +1,16 @@
 import React, { Fragment } from 'react'
+import { connect } from 'react-redux';
+import { toggleShelfDisplay } from '../actions/settingsAndFormAction'
+
 // import BookSVG from './BookSVG'
 
 // import randomColor from 'randomcolor'
 // import bookSvg from '../book_side.svg'
 
-const RenderUserBookSvg = ({book}) => {
+const RenderUserBookSvg = ({book, toggleShelfDisplay}) => {
   console.log(book);
   return (
-    <div class='book'>
+    <div class='book' onClick={toggleShelfDisplay}>
       <div class="stripe"></div>
           <p>test</p>
       <div id="bottom-stripes">
@@ -18,6 +21,6 @@ const RenderUserBookSvg = ({book}) => {
   )
 }
 
-export default RenderUserBookSvg
+export default connect(null, { toggleShelfDisplay })(RenderUserBookSvg)
 
 // <?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">

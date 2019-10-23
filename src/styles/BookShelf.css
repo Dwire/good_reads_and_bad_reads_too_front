@@ -70,12 +70,20 @@
   left: 2px;
 }
 
-
-/* .svgDiv {
+/* ------------------------------------------------------- */
+/* .book {
   width: 300px;
- }
+ } */
  
- svg:hover {
+ .book:hover {
    transform: scale(1.8);
    transition: 0.5s;
- } */
+   z-index: 1;
+ }
+
+ /* -------------------------------------------SINGLE BOOK SHELF-------------------- */
+
+ .single-book-shelf {
+   width: 500px;
+   border: 1px solid black;
+ }

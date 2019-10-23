@@ -1,4 +1,4 @@
-import { SET_SHELF_STYLE, TOGGLE_BOOK_LISTS } from './actionTypes'
+import { SET_SHELF_STYLE, TOGGLE_BOOK_LISTS, TOGGLE_SHELF_DISPLAY } from './actionTypes'
 
 export const setShelfStyle = (shelfStyle) => {
   return {
@@ -10,5 +10,11 @@ export const setShelfStyle = (shelfStyle) => {
 export const toggleBookLists = () => {
   return {
     type: TOGGLE_BOOK_LISTS
+  }
+}
+
+export const toggleShelfDisplay = () => {
+  return {
+    type: TOGGLE_SHELF_DISPLAY
   }
 }

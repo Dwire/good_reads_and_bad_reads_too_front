@@ -17,3 +17,4 @@ export const SET_LOGIN = 'SET_LOGIN'
 // settingsAndFormsReducer
 export const SET_SHELF_STYLE = 'SET_SHELF_STYLE'
 export const TOGGLE_BOOK_LISTS = 'TOGGLE_BOOK_LISTS'
+export const TOGGLE_SHELF_DISPLAY = 'TOGGLE_SHELF_DISPLAY'
