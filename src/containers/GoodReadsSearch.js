@@ -17,6 +17,7 @@ class GoodReadsSearch extends Component {
     console.log(this.state.searchTerm);
     return (
       <div>
+        <h1>FIND A BOOK</h1>
         <form >
           <input type="text" placeholder='Search For A Book' onChange={this.handleChange}/>
         </form>

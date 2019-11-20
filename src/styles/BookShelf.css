@@ -49,9 +49,15 @@
   padding: 3px;
   margin: 3px 0px;
   margin-left: 1px;
-  max-width: 30px;
+  width: 23px;
   height: 95%;
   /* padding-bottom: 10px; */
+}
+
+div.book p {
+  position: absolute;
+  bottom: 22px;
+  transform: rotate(270deg);
 }
 
 .stripe {
@@ -76,8 +82,9 @@
  } */
  
  .book:hover {
-   transform: scale(1.8);
-   transition: 0.5s;
+   transform: rotate(90deg) scale(1.8);
+   transition: 1s;
+   background-color: lightgrey;
    z-index: 1;
  }
 

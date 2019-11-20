@@ -29,7 +29,7 @@ class UserDash extends Component {
     }
   }
 
-// NOTE: User should already be set
+// NOTE: User should already be set - Maybe Run through login HOC
   setUser = (res) => {
     // this.props.setLogin()
     const {book_clubs, ...user} = res.user
