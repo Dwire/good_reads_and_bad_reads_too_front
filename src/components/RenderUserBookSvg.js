@@ -12,7 +12,7 @@ const RenderUserBookSvg = ({book, toggleShelfDisplay}) => {
   return (
     <div class='book' onClick={toggleShelfDisplay}>
       <div class="stripe"></div>
-          <p>test</p>
+      <p>{book.title.substring(0, 25)}</p>
       <div id="bottom-stripes">
         <div class="stripe"></div>
         <div class="stripe"></div>

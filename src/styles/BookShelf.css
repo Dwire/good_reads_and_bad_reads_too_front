@@ -52,11 +52,16 @@
   width: 23px;
   height: 95%;
   /* padding-bottom: 10px; */
+  /* font-size: 12px; */
 }
 
 div.book p {
   position: absolute;
-  bottom: 22px;
+  font-size: 0.6rem;
+  bottom: 45px;
+  width: 75px;
+  left: -25px;
+  -webkit-transform: rotate(270deg);
   transform: rotate(270deg);
 }
 
