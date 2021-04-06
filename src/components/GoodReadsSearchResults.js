@@ -9,13 +9,30 @@ class GoodReadsSearchResults extends Component {
     books: []
   }
 
+  // componentDidUpdate(prevProps) {
+  //   // console.log('prev', prevProps);
+  //   if (prevProps.term !== this.props.term && this.props.term.length > 3){
+  //     let token = window.localStorage.getItem('jwt')
+  //     goodReadsAdapter.search(this.props.term, token)
+  //     .then(json => {
+    //       const books = json.GoodreadsResponse.search.results.work
+    //       this.setBookList(books)
+    //     })
+    //   }else if (prevProps.term !== this.props.term && this.props.term.length < 3){
+      //     this.setBookList([])
+      //   }else{
+        //     console.log('TEST1');
+        //     return "TEST"
+        //   }
+        // }
+        
   componentDidUpdate(prevProps) {
-    // console.log('prev', prevProps);
-    if (prevProps.term !== this.props.term && this.props.term.length > 3){
+      // console.log('prev', prevProps);
+    if (prevProps.term !== this.props.term && this.props.term.length > 4){
       let token = window.localStorage.getItem('jwt')
       goodReadsAdapter.search(this.props.term, token)
-      .then(json => {
-        const books = json.GoodreadsResponse.search.results.work
+      .then((googleRes) => {
+        const books = googleRes.items
         this.setBookList(books)
       })
     }else if (prevProps.term !== this.props.term && this.props.term.length < 3){
@@ -33,9 +50,9 @@ class GoodReadsSearchResults extends Component {
   listBooksFromApi = () => {
     const books = this.state.books
     if (Array.isArray(books)) {
-      return books.map(book => <RenderGoodReadsBook book={book.best_book} addToReadingList={this.addToReadingList} addToReadList={this.addToReadList}/>)
+      return books.map(book => <RenderGoodReadsBook book={book.volumeInfo} addToReadingList={this.addToReadingList} addToReadList={this.addToReadList}/>)
     }else if (books !== undefined) {
-      return <RenderGoodReadsBook book={books.best_book} addToReadingList={this.addToReadingList} addToReadList={this.addToReadList} />
+      return <RenderGoodReadsBook book={books.volumeInfo} addToReadingList={this.addToReadingList} addToReadList={this.addToReadList} />
     }
   }
 
@@ -48,6 +65,7 @@ class GoodReadsSearchResults extends Component {
   }
 
   render() {
+    console.log("STATE", this.state.books);
     return (
       <div id='book-search-list'>
         {this.listBooksFromApi()}
